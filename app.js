@@ -3,8 +3,10 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 
+
 //Socket.io
 const io = require('socket.io')(server);
+let onlineUsers = {};
 //app.js
 io.on("connection", (socket) => {
   // This file will be read on new socket connections
